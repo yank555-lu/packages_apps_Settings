@@ -23,9 +23,9 @@
 
     <!-- Gzosp Logo Header -->
     <Preference 
-        android:key="gz_logo"
+        android:key="asm_logo"
         android:order="-500"
-        android:layout="@layout/gzosp_logo" />
+        android:layout="@layout/asylum_logo" />
 
     <Preference
         android:key="gesture_settings"
