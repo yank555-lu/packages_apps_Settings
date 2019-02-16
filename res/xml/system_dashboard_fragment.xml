@@ -22,7 +22,7 @@
     settings:initialExpandedChildrenCount="4">
 
     <!-- Gzosp Logo Header -->
-    <Preference 
+    <Preference
         android:key="asm_logo"
         android:order="-500"
         android:layout="@layout/asylum_logo" />

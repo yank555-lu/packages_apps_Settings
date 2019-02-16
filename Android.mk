@@ -45,6 +45,8 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     guava \
     jsr305 \
     settings-logtags \
+    com.asylum.utils \
+    com.asylum.core
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
