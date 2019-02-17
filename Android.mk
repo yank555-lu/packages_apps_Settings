@@ -32,6 +32,10 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v7-preference \
     android-support-v7-recyclerview \
     android-support-v14-preference \
+    com.asylum.utils \
+    com.asylum.core \
+    com.asylum.preference \
+    com.asylum.actions
 
 LOCAL_JAVA_LIBRARIES := \
     bouncycastle \
