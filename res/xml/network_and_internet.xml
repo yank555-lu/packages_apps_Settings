@@ -48,6 +48,13 @@
             android:targetClass="com.android.phone.MobileNetworkSettings" />
     </com.android.settingslib.RestrictedPreference>
 
+    <PreferenceScreen
+        android:key="network_traffic_state"
+        android:fragment="com.android.settings.NetworkTraffic"
+        android:title="@string/show_network_traffic_title"
+        android:icon="@drawable/ic_settings_network_traffic"
+        android:order="-13" />
+
     <com.android.settingslib.RestrictedPreference
         android:fragment="com.android.settings.TetherSettings"
         android:key="tether_settings"
