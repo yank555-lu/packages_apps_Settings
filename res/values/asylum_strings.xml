@@ -37,4 +37,9 @@
     <string name="network_traffic_animate_arrows">Animate arrows</string>
     <string name="network_traffic_animate_arrows_summary">Highlight arrows when there is activity (outgoing or incoming respectively)</string>
 
+    <!-- Wakeup options -->
+    <string name="display_category_wakeup_options_title">Wakeup options</string>
+    <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
+
 </resources>
