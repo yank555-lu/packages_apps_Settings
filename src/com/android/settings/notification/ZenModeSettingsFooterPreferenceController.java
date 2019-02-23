@@ -17,10 +17,12 @@
 package com.android.settings.notification;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.net.Uri;
 import android.provider.Settings;
 import android.service.notification.ZenModeConfig;
 import android.support.v7.preference.Preference;
+import android.text.TextUtils;
 
 import com.android.settings.R;
 import com.android.settingslib.core.lifecycle.Lifecycle;
@@ -66,6 +68,17 @@ public class ZenModeSettingsFooterPreferenceController extends AbstractZenModePr
         ZenModeConfig config = getZenModeConfig();
         String footerText = "";
         long latestEndTime = -1;
+        Resources res = mContext.getResources();
+        boolean hasAlertSlider = res.getBoolean(com.android.internal.R.bool.config_hasAlertSlider)
+                && !TextUtils.isEmpty(res.getString(
+                        com.android.internal.R.string.alert_slider_state_path))
+                && !TextUtils.isEmpty(res.getString(
+                        com.android.internal.R.string.alert_slider_uevent_match_path));
+
+        if (hasAlertSlider) {
+            return mContext.getString(
+                    R.string.zen_mode_settings_dnd_manual_indefinite_alert_slider);
+        }
 
         // DND turned on by manual rule
         if (config.manualRule != null) {
