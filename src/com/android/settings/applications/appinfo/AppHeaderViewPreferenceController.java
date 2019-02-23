@@ -94,6 +94,7 @@ public class AppHeaderViewPreferenceController extends BasePreferenceController
         mEntityHeaderController
                 .setLabel(appEntry)
                 .setIcon(appEntry)
+                .setPackageNameLabel(pkgInfo.packageName)
                 .setSummary(summary)
                 .setIsInstantApp(isInstantApp)
                 .done(activity, false /* rebindActions */);

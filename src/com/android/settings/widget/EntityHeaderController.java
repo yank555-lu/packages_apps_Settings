@@ -80,6 +80,7 @@ public class EntityHeaderController {
     private RecyclerView mRecyclerView;
     private Drawable mIcon;
     private String mIconContentDescription;
+    private CharSequence mPackageNameLabel;
     private CharSequence mLabel;
     private CharSequence mSummary;
     // Required for hearing aid devices.
@@ -153,6 +154,11 @@ public class EntityHeaderController {
 
     public EntityHeaderController setIconContentDescription(String contentDescription) {
         mIconContentDescription = contentDescription;
+        return this;
+    }
+
+    public EntityHeaderController setPackageNameLabel(CharSequence label) {
+        mPackageNameLabel = label;
         return this;
     }
 
@@ -250,6 +256,7 @@ public class EntityHeaderController {
             iconView.setContentDescription(mIconContentDescription);
         }
         setText(R.id.entity_header_title, mLabel);
+        setText(R.id.entity_header_pkgname, mPackageNameLabel);
         setText(R.id.entity_header_summary, mSummary);
         setText(R.id.entity_header_second_summary, mSecondSummary);
         if (mIsInstantApp) {

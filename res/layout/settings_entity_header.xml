@@ -54,6 +54,17 @@
             android:textDirection="locale" />
 
         <TextView
+            android:id="@+id/entity_header_pkgname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:textAlignment="viewStart"
+            android:textAppearance="@android:style/TextAppearance.Material.Body1"
+            android:textColor="?android:attr/textColorSecondary" />
+
+        <TextView
             android:id="@+id/install_type"
             style="@style/TextAppearance.EntityHeaderSummary"
             android:visibility="gone"
