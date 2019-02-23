@@ -27,6 +27,8 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -252,8 +254,20 @@ public class EntityHeaderController {
         styleActionBar(activity);
         ImageView iconView = mHeader.findViewById(R.id.entity_header_icon);
         if (iconView != null) {
+            final String finalPackageName = String.valueOf(mPackageNameLabel);
             iconView.setImageDrawable(mIcon);
             iconView.setContentDescription(mIconContentDescription);
+            iconView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    PackageManager pm = v.getContext().getPackageManager();
+                    Intent intent = pm.getLaunchIntentForPackage(finalPackageName);
+                    if (intent == null)
+                        return;
+
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
         setText(R.id.entity_header_title, mLabel);
         setText(R.id.entity_header_pkgname, mPackageNameLabel);
